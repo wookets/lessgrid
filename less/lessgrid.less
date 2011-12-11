@@ -1,0 +1,62 @@
+/* An example of the grid pattern but with less mixins to abstract what is really going on */
+@import "bootstrap.less";
+
+/* Give some hight so we can see the example more clearly */
+.content .span9,
+.content .span4,
+.content .main,
+.content .sidebar {
+  min-height: 200px;
+  border: 1px solid #AAA;
+}
+
+.row > .main,
+.row > .sidebar {
+  display: inline;
+  float: left;
+  margin-left: 20px;
+}
+
+/* Here we start defining our less grid mixin */
+.main {
+	.span7;
+}
+.sidebar {
+	.span6;
+}
+
+
+
+
+
+/* Everything below are just some defaults... Ignore */
+html, body {
+  background-color: #eee;
+}
+.container > footer p {
+  text-align: center; /* center align it with the container */
+}
+.container {
+  width: 820px; /* downsize our container to make the content feel a bit tighter and more cohesive. NOTE: this removes two full columns from the grid, meaning you only go to 14 columns and not 16. */
+}
+
+/* The white background content wrapper */
+.container > .content {
+  background-color: #fff;
+  padding: 20px;
+  margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
+  -webkit-border-radius: 0 0 6px 6px;
+     -moz-border-radius: 0 0 6px 6px;
+          border-radius: 0 0 6px 6px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+     -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+          box-shadow: 0 1px 2px rgba(0,0,0,.15);
+}
+
+/* Page header tweaks */
+.page-header {
+  background-color: #f5f5f5;
+  padding: 20px 20px 10px;
+  margin: -20px -20px 20px;
+}
+
